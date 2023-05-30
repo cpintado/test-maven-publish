@@ -35,7 +35,7 @@ jobs:
     - name: Publish a package
       run: |
         docker run -e USER -e TOKEN \
-        -e OWNER -e REPOSITORY
+        -e OWNER -e REPOSITORY \
         -e ARTIFACT_ID -e GROUP_ID -e PACKAGE_VERSION \
         ghcr.io/${{ github.repository }}:$IMAGE_RELEASE
   test-publish-ghes-subdomain:
@@ -51,7 +51,7 @@ jobs:
     - name: Publish a package
       run: |
         docker run -e USER -e TOKEN \
-        -e OWNER -e REPOSITORY
+        -e OWNER -e REPOSITORY \
         -e ARTIFACT_ID -e GROUP_ID -e PACKAGE_VERSION \
         -e GHES_HOSTNAME \
         ghcr.io/${{ github.repository }}:$IMAGE_RELEASE
@@ -69,7 +69,7 @@ jobs:
     - name: Publish a package
       run: |
         docker run -e USER -e TOKEN \
-        -e OWNER -e REPOSITORY
+        -e OWNER -e REPOSITORY \
         -e ARTIFACT_ID -e GROUP_ID -e PACKAGE_VERSION \
         -e GHES_HOSTNAME -e SUBDOMAIN_ISOLATION \
         ghcr.io/${{ github.repository }}:$IMAGE_RELEASE
