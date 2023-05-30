@@ -1,0 +1,25 @@
+name: Publish new release
+
+on:
+  release:
+    types: [published]
+
+env:
+  IMAGE_TAG: 'ghcr.io/${{ github.repository }}:${{ github.event.release.tag_name }}'
+
+jobs:
+  publish-release:
+    runs-on: ubuntu-latest
+    name: Publish the image to the GHCR
+    steps:
+      - name: Login to the GHCR
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v3
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag $IMAGE_TAG
+      - name: Push the image to the registry
+        run: docker push $IMAGE_TAG
