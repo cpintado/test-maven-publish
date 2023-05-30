@@ -39,7 +39,7 @@ docker pull ghcr.io/cpintado/test-maven-publish:v1.0.0
 
 The downloaded image can then be run using the `docker run` command. Parameters are passed to the image via environment variables.
 
-For example, to publish a Maven package to the `cpintado-org/test-packages` repository in `github.com`, authenticating as the `cpintado` user with the <PAT> token, and setting the  GROUP_ID AND ARTIFACT_ID to 'com.example.app' and `testapp` respectively, it can be done like this:
+For example, to publish a Maven package to the `cpintado-org/test-packages` repository in `github.com`, authenticating as the `cpintado` user with the `<PAT>` token, and setting the  `GROUP_ID` and `ARTIFACT_ID` to `com.example.app` and `testapp` respectively, it can be done like this:
 
 ```
 docker run -e USER=cpintado -e TOKEN=<PAT> \
@@ -64,7 +64,7 @@ docker run -e USER -e TOKEN \
 ghcr.io/cpintado/test-maven-publish:v1.0.0
 ```
 
-Both of the above examples will publish to the `cpintado-org/testpackages` repository a package with the specified ARTIFACT_ID and GROUP_ID, with version number `1.0.0`.
+Both of the above examples will publish to the `cpintado-org/testpackages` repository a package with the specified `ARTIFACT_ID` and `GROUP_ID`, with version number `1.0.0`.
 
 This is the simplest example but you can use more environment variables to suit your use case.
 
