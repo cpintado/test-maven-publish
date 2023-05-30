@@ -148,13 +148,8 @@ if [[ ! $OWNER =~ ^[a-z0-9-]+$ ]]; then
     exit 1
 fi
 
-if [ -z "$ARTIFACT_ID" ]; then
-    echo "ARTIFACT_ID not set. Using ${OWNER}-test-package as default"
-    ARTIFACT_ID="${OWNER}-test-package"
-fi
-
 if [[ ! $ARTIFACT_ID =~ ^[a-z0-9-]+$ ]]; then
-    echo "Invalid value for ARTIFACT_ID"
+    echo "Invalid value for ARTIFACT_ID or ARTIFACT_ID not specified"
     exit 1
 fi
 
