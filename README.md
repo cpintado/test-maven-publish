@@ -22,14 +22,7 @@ A Linux/Mac machine with Docker installed.
 
 ## Setup
 
-Authenticate to the GitHub Container Registry as described in the [Documentation](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry#authenticating-to-the-container-registry). For example, you can go to the settings of your GitHub account, [create a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) with the `read:packages` scope, and then do the following:
-
-```
-export CR_PAT=YOUR_TOKEN
-echo $CR_PAT | docker login ghcr.io -u USERNAME --password-stdin
-```
-
-Once you are authenticated, you can install the tool like this:
+You can install the tool like this:
 
 ```
 docker pull ghcr.io/cpintado/test-maven-publish:v1.0.0
